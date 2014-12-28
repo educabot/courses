@@ -10,10 +10,13 @@ class Goal(models.Model):
     axis = models.ForeignKey(Axis)
     description = models.CharField(max_length=200)
 
-    
+
 class Course(models.Model):
-    content = models.TextField
+    content = models.TextField()
     goal = models.ForeignKey(Goal)
+
+class Question(models.Model):
+    text = models.CharField(max_length=200)
 
 
 class Poll(models.Model):
@@ -21,5 +24,3 @@ class Poll(models.Model):
     goal = models.ForeignKey(Goal)
 
 
-class Question(models.Model):
-    text = models.CharField(max_length=200)
